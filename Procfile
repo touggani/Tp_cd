@@ -1,1 +1,1 @@
-web: node internals/generator/index.js
+yarn start
