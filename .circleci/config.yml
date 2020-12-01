@@ -104,7 +104,7 @@ jobs:
           command: git push https://heroku:ce43f66e-6842-4fe8-ab4f-37ae8833ea0f@git.heroku.com/fierce-atoll-83490.git HEAD:main
       - run:
           name: Smoke Test
-          command: ./../dep_heroku.sh
+          command: ./dep_heroku.sh
 
 workflows:
   version: 2
