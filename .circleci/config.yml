@@ -124,7 +124,7 @@ jobs:
           command: heroku open
       - run:
           name: Smoke Test
-          command: dep_heroku.sh
+          command: ./../dep_heroku.sh
 
 workflows:
   version: 2
