@@ -54,7 +54,7 @@ jobs:
           at: /tmp
       - run:
           name: Deploy app
-          command: npx netlify-cli deploy --prod --dir /tmp/server-doc --message "site deployed from circle ci"  --site 0bdd875a-a10f-438b-919e-c0a78d6e3adc
+          command: npx netlify-cli deploy --prod --dir /tmp/server-doc --message "site deployed from circle ci"  --site $NETLIFY_API_KEY
   back-test-unit:
     docker:
       - image: circleci/node:dubnium-browsers
@@ -101,7 +101,7 @@ jobs:
       - checkout
       - run:
           name: Heroku Deploy
-          command: git push https://heroku:ce43f66e-6842-4fe8-ab4f-37ae8833ea0f@git.heroku.com/fierce-atoll-83490.git HEAD:main
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:main
       - run:
           name: Smoke Test
           command: ./dep_heroku.sh
